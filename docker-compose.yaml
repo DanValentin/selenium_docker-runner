@@ -25,4 +25,4 @@ services:
       - BROWSER=firefox
       - MODULE=module-search.xml
     volumes:
-      - /d/docker/outputfiles/docker-compose/module-search:/usr/share/proiectlicenta/test-output
+      - /d/docker/jenkins/jobs/arhiva:/usr/share/proiectlicenta/test-output
