@@ -3,19 +3,13 @@ pipeline{
 	stages{
 		stage("Start Grid"){
 			steps{
-				sh "docker-compose up -d hub chrome firefox"
+				sh "docker-compose up"
 			}
 		}
-		stage("Run Test"){
+		stage("Run Stop"){
 			steps{
-				sh "docker-compose up module-search"
+				sh "docker-compose down"
 			}
-		}
-	}
-	post{
-		always{
-			archiveArtifacts artifacts: '/d/docker/outputfiles/**'
-			sh "docker-compose down"
 		}
 	}
 }
