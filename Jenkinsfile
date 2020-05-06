@@ -3,18 +3,18 @@ pipeline{
 	stages{
 		stage("Start Grid"){
 			steps{
-				bat "docker-compose up -d --no-color hub chrome firefox"
+				bat "docker-compose up -d hub chrome firefox"
 			}
 		}
 		stage("Run Test"){
 			steps{
-				bat "docker-compose up --no-color module-search"
+				bat "docker-compose up module-search"
 			}
 		}
 	}
 	post{
 		always{
-			archiveArtifacts artifacts: 'docker-compose/**'
+			archiveArtifacts artifacts: 'D:\\docker\\outputfiles\\docker-compose\\*' 
 			bat "docker-compose down"
 		}
 	}
