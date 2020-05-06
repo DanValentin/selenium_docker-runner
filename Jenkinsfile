@@ -14,7 +14,7 @@ pipeline{
 	}
 	post{
 		always{
-			archiveArtifacts artifacts: 'D:\\docker\\outputfiles\\docker-compose\\*' 
+			archiveArtifacts artifacts: 'D:\docker\jenkins\jobs' 
 			bat "docker-compose down"
 		}
 	}
