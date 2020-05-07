@@ -15,7 +15,7 @@ pipeline{
 	post{
 		always{ 
 			bat "docker-compose down"
-			allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+			allure includeProperties: false, jdk: '', results: [[path: 'D:\\docker\\jenkins\\slaves\\Slave_1\\workspace\\allure-results']]
 		}
 	}
 }
