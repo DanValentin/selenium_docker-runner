@@ -12,7 +12,7 @@ pipeline{
 			}
 		}
 		stage("Generate report"){
-			step([$class: 'Publisher', reportFilenamePattern: '**/jobs/arhiva/testng-results.xml'])
+			steps([$class: 'Publisher', reportFilenamePattern: '**/jobs/arhiva/testng-results.xml'])
 		}
 	}
 	post{
