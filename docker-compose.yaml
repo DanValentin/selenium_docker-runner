@@ -37,7 +37,3 @@ services:
       - MODULE=module-book-flight.xml
     volumes:
       - /d/docker/outputfiles/docker-compose/module-book-flight:/usr/share/proiectlicenta/test-output
-<<<<<<< HEAD
-      
-=======
->>>>>>> eddbe65cf1cd4d2686203cdcaf9acbcbf07b176e
