@@ -15,7 +15,14 @@ pipeline{
 	post{
 		always{ 
 			bat "docker-compose down"
-			step([$class: 'Publisher', reportFilenamePattern: 'D:\\docker\\jenkins\\jobs\\arhiva\\testng-results.xml'])
+			publishHTML target: [
+            allowMissing: false,
+            alwaysLinkToLastBuild: false,
+            keepAll: true,
+            reportDir: 'coverage',
+            reportFiles: 'index.html',
+            reportName: 'RCov Report'
+          ]
 		}
 	}
 }
