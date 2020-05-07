@@ -8,7 +8,7 @@ pipeline{
 		}
 		stage("Run Test"){
 			steps{
-				bat "docker-compose up  --no-color module-search"
+				bat "docker-compose up  --no-color module-online-order module-book-flight"
 			}
 		}
 	}
