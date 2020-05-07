@@ -26,3 +26,15 @@ services:
       - MODULE=module-search.xml
     volumes:
       - /d/docker/outputfiles/docker-compose/module-search:/usr/share/proiectlicenta/test-output
+  module-book-flight:
+    image: danpopa86/selenium-docker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - HUB_HOST=hub
+      - BROWSER=firefox
+      - MODULE=module-book-flight.xml
+    volumes:
+      - /d/docker/outputfiles/docker-compose/module-book-flight:/usr/share/proiectlicenta/test-output
+      

@@ -8,13 +8,12 @@ pipeline{
 		}
 		stage("Run Test"){
 			steps{
-				bat "docker-compose up module-search"
+				bat "docker-compose up  --no-color module-search"
 			}
 		}
 	}
 	post{
-		always{
-			archiveArtifacts artifacts: '/d/docker/outputfiles/**'
+		always{ 
 			bat "docker-compose down"
 		}
 	}
