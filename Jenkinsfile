@@ -15,14 +15,14 @@ pipeline{
 	post{
 		always{ 
 			bat "docker-compose down"
-			publishHTML target: [
-            allowMissing: false,
-            alwaysLinkToLastBuild: false,
-            keepAll: true,
-            reportDir: 'coverage',
-            reportFiles: 'index.html',
-            reportName: 'RCov Report'
-          ]
+			publishHTML (target: [
+				allowMissing: false,
+				alwaysLinkToLastBuild: false,
+				keepAll: true,
+				reportDir: 'D:\docker\outputfiles\docker-compose\module-search',
+				reportFiles: 'index.html',
+				reportName: "API Unit Testing Results"
+			])
 		}
 	}
 }

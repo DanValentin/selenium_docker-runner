@@ -22,7 +22,7 @@ services:
       - firefox
     environment:
       - HUB_HOST=hub
-      - BROWSER=firefox
+      - BROWSER=chrome
       - MODULE=module-search.xml
     volumes:
       - /d/docker/outputfiles/docker-compose/module-search:/usr/share/proiectlicenta/test-output
