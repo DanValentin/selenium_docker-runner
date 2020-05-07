@@ -13,7 +13,7 @@ pipeline{
 				allowMissing: false,
 				alwaysLinkToLastBuild: false,
 				keepAll: true,
-				reportDir: "D:\docker\jenkins\slaves\Slave_1\workspace",
+				reportDir: "/d/docker/jenkins/slaves/Slave_1/workspace",
 				reportFiles: "index.html",
 				reportName: "API Unit Testing Results"
 			])
