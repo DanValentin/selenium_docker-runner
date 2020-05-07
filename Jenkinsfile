@@ -13,8 +13,8 @@ pipeline{
 				allowMissing: false,
 				alwaysLinkToLastBuild: false,
 				keepAll: true,
-				reportDir: '/usr/share/proiectlicenta/test-output',
-				reportFiles: 'index.html',
+				reportDir: "/usr/share/proiectlicenta/test-output",
+				reportFiles: "index.html",
 				reportName: "API Unit Testing Results"
 			])
 			}
