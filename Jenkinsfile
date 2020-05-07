@@ -15,7 +15,7 @@ pipeline{
 	post{
 		always{ 
 			bat "docker-compose down"
-			allure includeProperties: false, jdk: '', results: [[path: 'D:\\docker\\jenkins\\slaves\\Slave_1\\workspace\\allure-results']]
+			step([$class: 'Publisher', reportFilenamePattern: 'D:\\docker\\jenkins\\jobs\\arhiva\\testng-results.xml'])
 		}
 	}
 }
