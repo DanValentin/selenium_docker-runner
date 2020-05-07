@@ -15,7 +15,7 @@ pipeline{
 	post{
 		always{ 
 			bat "docker-compose down"
-			step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+			step([$class: 'Publisher', reportFilenamePattern: '**/jobs/arhiva/testng-results.xml'])
 		}
 	}
 }
