@@ -13,7 +13,7 @@ pipeline{
 				allowMissing: false,
 				alwaysLinkToLastBuild: false,
 				keepAll: true,
-				reportDir: '/d/docker/outputfiles/docker-compose/module-search',
+				reportDir: '/usr/share/proiectlicenta/test-output',
 				reportFiles: 'index.html',
 				reportName: "API Unit Testing Results"
 			])
