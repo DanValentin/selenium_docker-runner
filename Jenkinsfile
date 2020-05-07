@@ -9,13 +9,7 @@ pipeline{
 		stage("Run Test"){
 			steps{
 				bat "docker-compose up  --no-color module-search"
-			}
-		}
-	}
-	post{
-		always{ 
-			bat "docker-compose down"
-			publishHTML (target: [
+				publishHTML (target: [
 				allowMissing: false,
 				alwaysLinkToLastBuild: false,
 				keepAll: true,
@@ -23,6 +17,12 @@ pipeline{
 				reportFiles: 'index.html',
 				reportName: "API Unit Testing Results"
 			])
+			}
+		}
+	}
+	post{
+		always{ 
+			bat "docker-compose down"
 		}
 	}
 }
