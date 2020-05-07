@@ -9,14 +9,8 @@ pipeline{
 		stage("Run Test"){
 			steps{
 				bat "docker-compose up  --no-color module-search"
-				publishHTML (target: [
-				allowMissing: false,
-				alwaysLinkToLastBuild: false,
-				keepAll: true,
-				reportDir: "/usr/share/proiectlicenta/test-output",
-				reportFiles: "index.html",
-				reportName: "API Unit Testing Results"
-			])
+				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/d/docker/outputfiles/docker-compose/module-search', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+				)
 			}
 		}
 	}
