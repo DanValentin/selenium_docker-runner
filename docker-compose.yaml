@@ -9,49 +9,19 @@ services:
       - "5555:5555"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /d/docker/zalenium:/usr/bin/docker
+      - /d/docker/outputfiles/docker-compose/module-online-order:/usr/bin/docker
     command: >
       start --desiredContainers 2 
             --maxDockerSeleniumContainers 2 
             --maxTestSessions 3 
-            --videoRecordingEnabled true
-  module-search:
-    image: danpopa86/selenium-docker
-    depends_on:
-      - hub
-    environment:
-      - HUB_HOST=hub
-      - BROWSER=chrome
-      - MODULE=module-search.xml
-    volumes:
-      - /d/docker/outputfiles/docker-compose/module-search:/usr/share/proiectlicenta/test-output
-  module-book-flight:
-    image: danpopa86/selenium-docker
-    depends_on:
-      - hub
-    environment:
-      - HUB_HOST=hub
-      - BROWSER=firefox
-      - MODULE=module-book-flight.xml
-    volumes:
-      - /d/docker/outputfiles/docker-compose/module-book-flight:/usr/share/proiectlicenta/test-output
-  tests-suite:
-    image: danpopa86/selenium-docker
-    depends_on:
-      - hub
-    environment:
-      - HUB_HOST=hub
-      - BROWSER=firefox
-      - MODULE=tests-suite.xml
-    volumes:
-      - /d/docker/outputfiles/docker-compose/test-suite:/usr/share/proiectlicenta/test-output
+            --videoRecordingEnabled false
   module-online-order:
     image: danpopa86/selenium-docker
     depends_on:
       - hub
     environment:
       - HUB_HOST=hub
-      - BROWSER=firefox
+      - BROWSER=chrome
       - MODULE=module-online-order.xml
     volumes:
       - /d/docker/outputfiles/docker-compose/module-online-order:/usr/share/proiectlicenta/test-output
