@@ -14,6 +14,7 @@ pipeline{
 	}
 	post{
 		always("Bring everything down"){ 
+			archiveArtifacts artifacts: '/d/docker/outputfiles/docker-compose/**'
 			bat "docker-compose down"
 		}
 	}
