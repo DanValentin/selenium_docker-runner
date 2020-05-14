@@ -47,7 +47,7 @@ services:
       - BROWSER=firefox
       - MODULE=tests-suite.xml
     volumes:
-      - /d/docker/outputfiles/docker-compose/test-suite:/usr/share/proiectlicenta/test-output
+      - /d/docker/jenkins/arctest/test-suite:/usr/share/proiectlicenta/test-output
   module-online-order:
     image: danpopa86/selenium-docker
     depends_on:
