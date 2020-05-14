@@ -14,7 +14,7 @@ pipeline{
 	}
 	post{
 		always("Bring everything down"){ 
-			archiveArtifacts '/d/docker/jenkins/arctest/test-suite'
+			//archiveArtifacts '/d/docker/jenkins/arctest/test-suite'
 			bat "docker-compose down"
 		}
 	}
