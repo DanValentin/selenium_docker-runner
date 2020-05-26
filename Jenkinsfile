@@ -1,6 +1,6 @@
 //Comanda de pipeline
 pipeline{
-	//aici specific ca orice agent poate executa testele
+	//aici specific ca orice agent Jenkins poate executa testele
 	agent any
 	stages{
 		stage("Start Grid"){
@@ -19,7 +19,7 @@ pipeline{
 		}
 	}
 	post{
-		//comanda "always" este executata mereu indiferent daca build-ul si testele au fost cu succes sau nu.
+		//comanda "always" este executata mereu indiferent daca build-ul si testele au fost finalizate cu succes sau nu.
 		always("Bring everything down"){ 
 			//comanda de mai jos opreste toate procesele "Selenium Grid, nodurile Chrome si Firefox + suita de teste.
 			//folosim "bat" daca rulam pe o masina cu windows, daca rulam pe o masina cu linux folosim "sh"
