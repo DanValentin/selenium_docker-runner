@@ -1,13 +1,16 @@
 version: "3"
 services:
+#In in linia de mai jos specific ce imagine de Selenium Grid trebuie sa descarc de pe hub.docker.com
   hub:
     image: selenium/hub:3.14
+#In in linia de mai jos specific ce imagine de endpoint trebuie sa descarc de pe hub.docker.com - chrome. Si specific ca trebuie sa porneasca prima data hub-ul si dupa care nodul de Chrome si dupa care ii setez variabila "HUB_HOST";
   chrome:
     image: selenium/node-chrome:3.14
     depends_on:
       - hub
     environment:
       - HUB_HOST=hub
+#In in linia de mai jos specific ce imagine de endpoint trebuie sa descarc de pe hub.docker.com - Firefox. Si specific ca trebuie sa porneasca prima data hub-ul si dupa care nodul de Firefox si dupa care ii setez variabila "HUB_HOST";
   firefox:
     image: selenium/node-firefox:3.14
     shm_size: '1gb'
@@ -15,6 +18,7 @@ services:
       - hub
     environment:
       - HUB_HOST=hub
+#In liniile de mai jos setez ce imagine sa descarce de pe hub.docker.com, specifica ca nodurile Chrome si Firefox trebuie sa fie pornite inainte ca testele sa inceapa, specific si variabilile folosite in teste si ce modul este rulat(TestNG.xml)
   module-search:
     image: danpopa86/selenium-docker
     depends_on:
@@ -24,8 +28,10 @@ services:
       - HUB_HOST=hub
       - BROWSER=chrome
       - MODULE=module-search.xml
+# Aici setez unde sunt salvate output-urile testelor - in cazul de fata sunt salvate in D:\docker\outputfiles\*
     volumes:
       - /d/docker/outputfiles/docker-compose/module-search:/usr/share/proiectlicenta/test-output
+#In liniile de mai jos setez ce imagine sa descarce de pe hub.docker.com, specifica ca nodurile Chrome si Firefox trebuie sa fie pornite inainte ca testele sa inceapa, specific si variabilile folosite in teste si ce modul este rulat(TestNG.xml)
   module-book-flight:
     image: danpopa86/selenium-docker
     depends_on:
@@ -35,8 +41,10 @@ services:
       - HUB_HOST=hub
       - BROWSER=firefox
       - MODULE=module-book-flight.xml
+# Aici setez unde sunt salvate output-urile testelor - in cazul de fata sunt salvate in D:\docker\outputfiles\*
     volumes:
       - /d/docker/outputfiles/docker-compose/module-book-flight:/usr/share/proiectlicenta/test-output
+#In liniile de mai jos setez ce imagine sa descarce de pe hub.docker.com, specifica ca nodurile Chrome si Firefox trebuie sa fie pornite inainte ca testele sa inceapa, specific si variabilile folosite in teste si ce modul este rulat(TestNG.xml)
   tests-suite:
     image: danpopa86/selenium-docker
     depends_on:
@@ -46,8 +54,10 @@ services:
       - HUB_HOST=hub
       - BROWSER=firefox
       - MODULE=tests-suite.xml
+# Aici setez unde sunt salvate output-urile testelor - in cazul de fata sunt salvate in D:\docker\outputfiles\*
     volumes:
       - /d/docker/jenkins/arctest/test-suite:/usr/share/proiectlicenta/test-output
+#In liniile de mai jos setez ce imagine sa descarce de pe hub.docker.com, specifica ca nodurile Chrome si Firefox trebuie sa fie pornite inainte ca testele sa inceapa, specific si variabilile folosite in teste si ce modul este rulat(TestNG.xml)
   module-online-order:
     image: danpopa86/selenium-docker
     depends_on:
@@ -57,5 +67,6 @@ services:
       - HUB_HOST=hub
       - BROWSER=firefox
       - MODULE=module-online-order.xml
+# Aici setez unde sunt salvate output-urile testelor - in cazul de fata sunt salvate in D:\docker\outputfiles\*
     volumes:
       - /d/docker/outputfiles/docker-compose/module-online-order:/usr/share/proiectlicenta/test-output
