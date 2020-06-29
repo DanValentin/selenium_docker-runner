@@ -14,7 +14,7 @@ pipeline{
 			steps{
 				//comanda de mai jos porneste ce suita de teste specificata "test-suite.xml" din fisierul "docker-compose.yaml"
 				//folosim "bat" daca rulam pe o masina cu windows, daca rulam pe o masina cu linux folosim "sh"
-				bat "docker-compose up  --no-color module-online-order"
+				bat "docker-compose up  --no-color module-online-order module-search"
 			}
 		}
 	}
